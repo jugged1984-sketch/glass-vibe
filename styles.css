@@ -7,6 +7,7 @@ img,svg{max-width:100%}
 .section{scroll-margin-top:24px}
 .style-list article,.founder-copy,.event-main,.event-copy{min-width:0}
 .style-list h3{max-width:100%;font-size:clamp(38px,5vw,72px);letter-spacing:-.035em}
+.style-list article:nth-child(3) h3{font-size:clamp(28px,3vw,46px)}
 .event-meta span{min-width:0;text-align:right;overflow-wrap:anywhere}
 .jp-copy,.event-copy>p:last-of-type,.experience-row p,.style-list article>p:last-child,.founder blockquote,.faq-item div{overflow-wrap:anywhere;word-break:normal}
 
