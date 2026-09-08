@@ -2,6 +2,15 @@
   "use strict";
   const config = window.GLASS_VIBE_CONFIG || {};
   const event = config.currentEvent || {};
+  const brandLogo = document.querySelector("[data-brand-logo]");
+  const logoFallback = document.querySelector("[data-logo-fallback]");
+  if (brandLogo && logoFallback) {
+    const showLogo = () => { brandLogo.hidden = false; logoFallback.hidden = true; };
+    const showFallback = () => { brandLogo.hidden = true; logoFallback.hidden = false; };
+    brandLogo.addEventListener("load", showLogo);
+    brandLogo.addEventListener("error", showFallback);
+    if (brandLogo.complete) (brandLogo.naturalWidth ? showLogo : showFallback)();
+  }
   const bySlot = (name) => document.querySelectorAll(`[data-slot="${name}"]`);
   const makeLink = (label, url, className = "button") => {
     if (!url) return null;
