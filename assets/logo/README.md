@@ -1,6 +1,7 @@
-# H3 logo replacement
+# GLASS VIBE wordmark replacement
 
-Export the approved H3 header logo as `h3-logo.svg` and place it in this directory.
-The header loads that path automatically. Until the asset exists (or if it fails to
-load), the existing `GV` monogram remains visible, so deployment is safe at every
-stage. The decorative handwritten Hero lockup remains text by design.
+The site currently renders the elegant `Glass Vibe` wordmark as text so it stays
+sharp at every viewport size. When the approved wordmark artwork is available,
+export it as an accessible SVG or transparent PNG and replace the text inside the
+header and brand lockups. Keep `WINE · PEOPLE · TOKYO` as the supporting line;
+do not substitute a monogram for the primary wordmark.

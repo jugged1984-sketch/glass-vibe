@@ -2,15 +2,6 @@
   "use strict";
   const config = window.GLASS_VIBE_CONFIG || {};
   const event = config.currentEvent || {};
-  const brandLogo = document.querySelector("[data-brand-logo]");
-  const logoFallback = document.querySelector("[data-logo-fallback]");
-  if (brandLogo && logoFallback) {
-    const showLogo = () => { brandLogo.hidden = false; logoFallback.hidden = true; };
-    const showFallback = () => { brandLogo.hidden = true; logoFallback.hidden = false; };
-    brandLogo.addEventListener("load", showLogo);
-    brandLogo.addEventListener("error", showFallback);
-    if (brandLogo.complete) (brandLogo.naturalWidth ? showLogo : showFallback)();
-  }
   const bySlot = (name) => document.querySelectorAll(`[data-slot="${name}"]`);
   const makeLink = (label, url, className = "button") => {
     if (!url) return null;
@@ -44,9 +35,14 @@
 
   const instagramUrl = event.instagramUrl || config.instagramUrl;
   const reservationLink = makeLink("RESERVE YOUR GLASS →", event.reservationUrl);
-  const followLink = makeLink("FOLLOW ON INSTAGRAM →", instagramUrl);
-  bySlot("event-cta").forEach((slot) => slot.append((reservationLink || followLink)?.cloneNode(true) || document.createTextNode("")));
-  bySlot("join-cta").forEach((slot) => slot.append((reservationLink || makeLink("FOLLOW GLASS VIBE →", instagramUrl))?.cloneNode(true) || document.createTextNode("")));
+  const comingSoon = () => {
+    const note = document.createElement("span");
+    note.className = "coming-soon-note";
+    note.textContent = "COMING SOON";
+    return note;
+  };
+  bySlot("event-cta").forEach((slot) => slot.append(reservationLink?.cloneNode(true) || comingSoon()));
+  bySlot("join-cta").forEach((slot) => slot.append(reservationLink?.cloneNode(true) || comingSoon()));
   bySlot("instagram-cta").forEach((slot) => slot.append(makeLink("FOLLOW GLASS VIBE →", instagramUrl)?.cloneNode(true) || document.createTextNode("")));
   const mobileAction = event.reservationUrl ? makeLink("RESERVE", event.reservationUrl) : makeLink("FOLLOW", instagramUrl);
   bySlot("mobile-action").forEach((slot) => slot.append(mobileAction?.cloneNode(true) || document.createTextNode("")));
