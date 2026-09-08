@@ -9,7 +9,7 @@ step and is ready to serve from GitHub Pages.
 - `styles.css` — color tokens, editorial layouts, motion, and responsive rules
 - `script.js` — configuration rendering, conditional links, menu, FAQ, reveals
 - `data/events.js` — the single source of truth for event and external-link data
-- `assets/icons/favicon.svg` — temporary GV monogram favicon
+- `assets/icons/favicon.svg` — temporary small-format favicon
 - `assets/images/` — documented image and OGP replacement locations
 - `assets/logo/` — documented official logo replacement location
 
@@ -32,7 +32,7 @@ event-specific `currentEvent.instagramUrl`). Set `shoYamazakiUrl` and
 
 ## Brand assets
 
-The initial wordmark is intentionally a replaceable text lockup. Follow
+The primary `Glass Vibe` wordmark is intentionally a replaceable text lockup. Follow
 `assets/logo/README.md` to switch it to approved SVG/PNG artwork. Photo slots
 use abstract, code-rendered Tokyo-night visuals until genuine commissioned event
 photography exists; follow `assets/images/README.md` for filenames, dimensions,
