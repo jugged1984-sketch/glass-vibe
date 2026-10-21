@@ -55,7 +55,7 @@
   if (!external.children.length) external.hidden = true;
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeMenu(); toggle.focus(); } });
   if (config.canonicalUrl) {
-    const canonical = document.createElement("link"); canonical.rel = "canonical"; canonical.href = config.canonicalUrl; document.head.appendChild(canonical);
+    const canonical = document.createElement("link"); canonical.rel = "canonical"; canonical.href = location.pathname.endsWith("faq.html") ? new URL("faq.html", config.canonicalUrl).href : config.canonicalUrl; document.head.appendChild(canonical);
   }
   if (config.ogImage) {
     const image = document.createElement("meta"); image.property = "og:image"; image.content = config.ogImage; document.head.appendChild(image);
@@ -68,8 +68,8 @@
   }));
   const toggle = document.querySelector(".menu-toggle");
   const menu = document.getElementById("mobile-menu");
-  const closeMenu = () => { toggle.setAttribute("aria-expanded", "false"); menu.hidden = true; document.body.style.overflow = ""; };
-  toggle.addEventListener("click", () => { const open = toggle.getAttribute("aria-expanded") === "true"; toggle.setAttribute("aria-expanded", String(!open)); menu.hidden = open; document.body.style.overflow = open ? "" : "hidden"; });
+  const closeMenu = () => { toggle.setAttribute("aria-expanded", "false"); toggle.querySelector(".menu-button-label").textContent = "MENU"; menu.hidden = true; document.body.style.overflow = ""; };
+  toggle.addEventListener("click", () => { const open = toggle.getAttribute("aria-expanded") === "true"; toggle.setAttribute("aria-expanded", String(!open)); toggle.querySelector(".menu-button-label").textContent = open ? "MENU" : "CLOSE"; menu.hidden = open; document.body.style.overflow = open ? "" : "hidden"; });
   menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
   const reveals = document.querySelectorAll(".reveal");
