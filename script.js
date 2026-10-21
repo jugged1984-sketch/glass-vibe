@@ -30,7 +30,7 @@
     const row = document.createElement("p");
     row.innerHTML = `<small>${label}</small><span></span>`;
     row.querySelector("span").textContent = event[key];
-    meta.appendChild(row);
+    meta?.appendChild(row);
   });
 
   const instagramUrl = event.instagramUrl || config.instagramUrl;
