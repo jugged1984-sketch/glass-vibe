@@ -34,11 +34,11 @@
   });
 
   const instagramUrl = event.instagramUrl || config.instagramUrl;
-  const reservationLink = makeLink("RESERVE YOUR GLASS →", event.reservationUrl);
+  const reservationLink = makeLink("参加を申し込む →", event.reservationUrl);
   const comingSoon = () => {
     const note = document.createElement("span");
     note.className = "coming-soon-note";
-    note.textContent = "COMING SOON";
+    note.textContent = "開催情報は準備中です";
     return note;
   };
   bySlot("event-cta").forEach((slot) => slot.append(reservationLink?.cloneNode(true) || comingSoon()));
@@ -53,6 +53,7 @@
     const link = makeLink(label, url, ""); if (link) external.appendChild(link);
   });
   if (!external.children.length) external.hidden = true;
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeMenu(); toggle.focus(); } });
   if (config.canonicalUrl) {
     const canonical = document.createElement("link"); canonical.rel = "canonical"; canonical.href = config.canonicalUrl; document.head.appendChild(canonical);
   }

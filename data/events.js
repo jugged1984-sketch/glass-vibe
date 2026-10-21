@@ -3,7 +3,7 @@
  * Leave unknown values as empty strings: the UI will not render them.
  */
 window.GLASS_VIBE_CONFIG = {
-  canonicalUrl: "",
+  canonicalUrl: "https://glassvibe.tokyo/",
   instagramUrl: "",
   tsukiAkariUrl: "",
   shoYamazakiUrl: "",
@@ -11,7 +11,7 @@ window.GLASS_VIBE_CONFIG = {
   currentEvent: {
     eventNumber: "#001",
     eventTitle: "TOKYO WINE SOCIAL",
-    status: "COMING SOON",
+    status: "開催準備中",
     date: "",
     time: "",
     venue: "",
