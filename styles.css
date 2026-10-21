@@ -21,3 +21,5 @@
 
 /* One event action on mobile: use the persistent bottom button. */
 @media(max-width:800px){.hero-actions{display:none}}
+
+.about-page .simple-about h1{font:400 25px/1.5 var(--sans);letter-spacing:.01em;margin:0 0 28px}.about-page .about{border-top:1px solid var(--line)}@media(max-width:800px){.about-page .simple-about h1{font-size:22px}}

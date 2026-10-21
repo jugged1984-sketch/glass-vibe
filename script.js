@@ -55,7 +55,7 @@
   if (!external.children.length) external.hidden = true;
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeMenu(); toggle.focus(); } });
   if (config.canonicalUrl) {
-    const canonical = document.createElement("link"); canonical.rel = "canonical"; canonical.href = location.pathname.endsWith("faq.html") ? new URL("faq.html", config.canonicalUrl).href : config.canonicalUrl; document.head.appendChild(canonical);
+    const canonical = document.createElement("link"); canonical.rel = "canonical"; canonical.href = /\/(faq|about)\.html$/.test(location.pathname) ? new URL(location.pathname.split("/").pop(), config.canonicalUrl).href : config.canonicalUrl; document.head.appendChild(canonical);
   }
   if (config.ogImage) {
     const image = document.createElement("meta"); image.property = "og:image"; image.content = config.ogImage; document.head.appendChild(image);
