@@ -29,3 +29,6 @@
 
 /* Stamp overlays the complete event announcement. */
 .event-announcement{position:relative;isolation:isolate;max-width:650px}.event-announcement .coming-stamp{position:absolute;z-index:2;left:50%;top:50%;width:230px;height:156px;margin:0;transform:translate(-50%,-50%) rotate(-14deg);opacity:.48;pointer-events:none}.event-announcement .coming-stamp:before{width:146px;height:146px;left:42px;border-width:5px}.event-announcement .coming-stamp span{font-size:32px;background:transparent;text-shadow:0 1px #100f0e}.event-announcement h2,.event-announcement #event-details,.event-announcement .status{position:relative;z-index:1}@media(max-width:800px){.event-announcement .coming-stamp{width:210px;height:142px}.event-announcement .coming-stamp:before{width:134px;height:134px;left:38px}.event-announcement .coming-stamp span{font-size:29px}}
+
+/* Center the next-event announcement on every screen. */
+.event-main{text-align:center;margin-inline:auto;width:100%}.event-announcement{margin-inline:auto}.event-main .event-meta p{justify-content:center}
