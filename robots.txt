@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jugged1984-sketch.github.io/glass-vibe/sitemap.xml

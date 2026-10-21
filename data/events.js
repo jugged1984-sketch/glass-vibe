@@ -3,7 +3,7 @@
  * Leave unknown values as empty strings: the UI will not render them.
  */
 window.GLASS_VIBE_CONFIG = {
-  canonicalUrl: "https://glassvibe.tokyo/",
+  canonicalUrl: "https://jugged1984-sketch.github.io/glass-vibe/",
   instagramUrl: "",
   tsukiAkariUrl: "",
   shoYamazakiUrl: "",
