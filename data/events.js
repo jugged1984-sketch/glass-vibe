@@ -3,10 +3,10 @@
  * Leave unknown values as empty strings: the UI will not render them.
  */
 window.GLASS_VIBE_CONFIG = {
-  canonicalUrl: "https://jugged1984-sketch.github.io/glass-vibe/",
+  canonicalUrl: "https://glassvibe.tokyo/",
   instagramUrl: "",
-  tsukiAkariUrl: "",
-  shoYamazakiUrl: "",
+  tsukiAkariUrl: "https://tsuki-akari.tokyo/",
+  shoYamazakiUrl: "https://sho-yamazaki.jp/profile/",
   ogImage: "",
   currentEvent: {
     eventNumber: "#001",

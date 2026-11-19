@@ -54,7 +54,7 @@
   });
   if (!external.children.length) external.hidden = true;
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeMenu(); toggle.focus(); } });
-  if (config.canonicalUrl) {
+  if (config.canonicalUrl && !document.querySelector('link[rel="canonical"]')) {
     const canonical = document.createElement("link"); canonical.rel = "canonical"; canonical.href = /\/(?!index\.html)[^/]+\.html$/.test(location.pathname) ? new URL(location.pathname.split("/").pop(), config.canonicalUrl).href : config.canonicalUrl; document.head.appendChild(canonical);
   }
   if (config.ogImage) {
